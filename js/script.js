@@ -35,10 +35,10 @@ function LoadImg(){
     Weapon_img.src = (SelectionOptions.find(FindCategory => FindCategory.Category == "Weapon")).Options[SelectedOptions["Weapon"]].ImagePath
 
     Body_img.onload = () => {
-        ctx_model.drawImage(Body_img, 0, 0,200,200);
-        ctx_model.drawImage(Eyes_img, 0, 0,200,200);
-        ctx_model.drawImage(Mouth_img, 0, 0,200,200);
-        ctx_model.drawImage(Weapon_img, 0, 0,200,200);
+        ctx_model.drawImage(Body_img, 0, 0,canvas_model.width,canvas_model.height);
+        ctx_model.drawImage(Eyes_img, 0, 0,canvas_model.width,canvas_model.height);
+        ctx_model.drawImage(Mouth_img, 0, 0,canvas_model.width,canvas_model.height);
+        ctx_model.drawImage(Weapon_img, 0, 0,canvas_model.width,canvas_model.height);
     };
 }
 
@@ -52,7 +52,7 @@ function CreateSelection_Main(){
 function CreateSelection_Each(_options){
 
     var HTML_Switch = `<button id="`+_options.Category+`_Selection_Btn" data-category="`+_options.Category+`"
-     onclick="SwitchCategory(this)">`
+     onclick="SwitchCategory(this)" class="btn btn-outline-dark">`
     +_options.Category+`</button>`;
 
     var HTML_Selection = `<div id="`+_options.Category+`_Selection"></div>`;
@@ -85,6 +85,11 @@ function UpdateImg(_elem){
 function SwitchCategory(_elem){
     $("#Selection_Container>div").hide()
     $("#"+$(_elem).data("category")+"_Selection").show()
+
+    $('#Selection_Switch>button').removeClass('btn-dark')
+    $('#Selection_Switch>button').addClass('btn-outline-dark')
+    $(_elem).removeClass('btn-outline-dark')
+    $(_elem).addClass('btn-dark')
 }
 
 function SaveAsImg(){

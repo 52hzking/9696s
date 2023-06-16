@@ -7,3 +7,27 @@
     border-radius: 5px;
     background-color: white;
 }
+
+#Selection_Switch,
+#Selection_Container{
+    margin-top: 10px;
+}
+
+#Selection_Switch button,
+#Selection_Container button{
+    margin-left: 10px;
+}
+
+#Canvas_Container{
+    margin: 10px;
+}
+
+#SaveImg{
+    position: absolute;
+    right:8px
+}
+
+#MainWindow{
+    width:340px;
+    position: relative;
+}
