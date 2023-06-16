@@ -4,7 +4,8 @@ const ctx_model = canvas_model.getContext("2d");
 var SelectedOptions = {
     "Base": 0,
     "Eyes": 0,
-    "Mouth": 0
+    "Mouth": 0,
+    "Weapon": 0
 }
 
 CreateSelection_Main()
@@ -22,6 +23,9 @@ function init_Img(){
     setTimeout(function(){
         var knight_Mouth = CreateImg(ctx_model,"Mouth",SelectedOptions["Mouth"])
     },300);
+    setTimeout(function(){
+        var knight_Weapon = CreateImg(ctx_model,"Weapon",SelectedOptions["Weapon"])
+    },400);
     
 }
 
@@ -89,4 +93,13 @@ function UpdateImg(_elem){
 function SwitchCategory(_elem){
     $("#Selection_Container>div").hide()
     $("#"+$(_elem).data("category")+"_Selection").show()
+}
+
+function SaveAsImg(){
+    let downloadLink = document.createElement('a');
+    downloadLink.setAttribute('download', '9696s.png');
+    let dataURL = canvas_model.toDataURL('image/png');
+    let url = dataURL.replace(/^data:image\/png/,'data:application/octet-stream');
+    downloadLink.setAttribute('href', url);
+    downloadLink.click();
 }
