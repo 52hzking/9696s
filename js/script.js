@@ -7,51 +7,6 @@ var SelectedOptions = {
     "Mouth": 0
 }
 
-const SelectionOptions = [
-    {
-        "Category":"Base",
-        "FolderPath":"9696_img/Base",
-        "Options": [
-            {
-                "ImageLabel":"Base",
-                "ImagePath":"9696_img/Base/Base_1.png"
-            }
-        ]
-    },
-    {
-        "Category":"Eyes",
-        "FolderPath":"9696_img/Eyes",
-        "Options": [
-            {
-                "ImageLabel":"Eyes1",
-                "ImagePath":"9696_img/Eyes/Eyes_1.png"
-            },
-            {
-                "ImageLabel":"Eyes2",
-                "ImagePath":"9696_img/Eyes/Eyes_2.png"
-            }
-        ]
-    },
-    {
-        "Category":"Mouth",
-        "FolderPath":"9696_img/Mouth",
-        "Options": [
-            {
-                "ImageLabel":"Mouth1",
-                "ImagePath":"9696_img/Mouth/Mouth_1.png"
-            },
-            {
-                "ImageLabel":"Mouth2",
-                "ImagePath":"9696_img/Mouth/Mouth_2.png"
-            },
-            {
-                "ImageLabel":"Mouth3",
-                "ImagePath":"9696_img/Mouth/Mouth_3.png"
-            }
-        ]
-    }
-]
-
 CreateSelection_Main()
 init_Img()
 
