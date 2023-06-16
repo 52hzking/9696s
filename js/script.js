@@ -2,10 +2,17 @@ const canvas_model = document.getElementById("ModelCanvas");
 const ctx_model = canvas_model.getContext("2d");
 
 var SelectedOptions = {
-    "Base": 0,
+    "Body": 0,
     "Eyes": 0,
     "Mouth": 0,
     "Weapon": 0
+}
+
+var SelectedOptions_FilePath = {
+    "Body": "",
+    "Eyes": "",
+    "Mouth": "",
+    "Weapon": ""
 }
 
 CreateSelection_Main()
@@ -13,41 +20,26 @@ init_Img()
 
 function init_Img(){
     ctx_model.clearRect(0, 0, canvas_model.width, canvas_model.height);
-
-    setTimeout(function(){
-        var knight_base = CreateImg(ctx_model,'Base',SelectedOptions["Base"])
-    },100);
-    setTimeout(function(){
-        var knight_Eyes = CreateImg(ctx_model,"Eyes",SelectedOptions["Eyes"])
-    },200);
-    setTimeout(function(){
-        var knight_Mouth = CreateImg(ctx_model,"Mouth",SelectedOptions["Mouth"])
-    },300);
-    setTimeout(function(){
-        var knight_Weapon = CreateImg(ctx_model,"Weapon",SelectedOptions["Weapon"])
-    },400);
-    
+    LoadImg()
 }
 
-function CreateImg(_ctx_model,_category,_index){
+function LoadImg(){
+    const Body_img = new Image();
+    const Eyes_img = new Image();
+    const Mouth_img = new Image();
+    const Weapon_img = new Image();
 
-    var Select_CategoryOption = SelectionOptions.find(FindCategory => FindCategory.Category == _category)
+    Body_img.src = (SelectionOptions.find(FindCategory => FindCategory.Category == "Body")).Options[SelectedOptions["Body"]].ImagePath
+    Eyes_img.src = (SelectionOptions.find(FindCategory => FindCategory.Category == "Eyes")).Options[SelectedOptions["Eyes"]].ImagePath
+    Mouth_img.src = (SelectionOptions.find(FindCategory => FindCategory.Category == "Mouth")).Options[SelectedOptions["Mouth"]].ImagePath
+    Weapon_img.src = (SelectionOptions.find(FindCategory => FindCategory.Category == "Weapon")).Options[SelectedOptions["Weapon"]].ImagePath
 
-    if (Select_CategoryOption!= undefined){
-
-        var FilePath = Select_CategoryOption.Options[_index].ImagePath
-
-        const img = new Image();
-        img.onload = () => {
-            _ctx_model.drawImage(img, 0, 0,200,200);
-    
-        };
-        img.src = FilePath;
-    
-        return img
-    }
-
-    
+    Body_img.onload = () => {
+        ctx_model.drawImage(Body_img, 0, 0,200,200);
+        ctx_model.drawImage(Eyes_img, 0, 0,200,200);
+        ctx_model.drawImage(Mouth_img, 0, 0,200,200);
+        ctx_model.drawImage(Weapon_img, 0, 0,200,200);
+    };
 }
 
 function CreateSelection_Main(){

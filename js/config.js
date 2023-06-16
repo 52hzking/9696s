@@ -1,12 +1,12 @@
 
 const SelectionOptions = [
     {
-        "Category":"Base",
-        "FolderPath":"9696_img/Base",
+        "Category":"Body",
+        "FolderPath":"9696_img/Body",
         "Options": [
             {
-                "ImageLabel":"Base",
-                "ImagePath":"9696_img/Base/Base_1.png"
+                "ImageLabel":"Body",
+                "ImagePath":"9696_img/Body/Body_1.png"
             }
         ]
     },
