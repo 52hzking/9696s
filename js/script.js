@@ -92,12 +92,12 @@ function CreateSelection_Each(_options){
 
     var HTML_OptionBtn = "";
     _options.Options.forEach(function(eachOption, option_index){
-        HTML_OptionBtn += `<button class="SelectionBtn" 
+        HTML_OptionBtn += `<div class="SelectionBtn_Container"><button class="SelectionBtn" 
         style="background-image: url('`+eachOption.ImagePath+`');"  
         data-category="`+_options.Category+`" 
         data-index="`+option_index+`" 
         onclick="UpdateImg(this)"
-        ></button>`
+        ></button></div>`
     })
     $("#"+_options.Category + "_Selection").append(HTML_OptionBtn)
    
@@ -116,10 +116,8 @@ function SwitchCategory(_elem){
     $("#Selection_Container>div").hide()
     $("#"+$(_elem).data("category")+"_Selection").show()
 
-    $('#Selection_Switch>button').removeClass('btn-dark')
-    $('#Selection_Switch>button').addClass('btn-outline-dark')
-    $(_elem).removeClass('btn-outline-dark')
-    $(_elem).addClass('btn-dark')
+    $('#Selection_Switch>button').removeClass('active')
+    $(_elem).addClass('active')
 }
 
 function SaveAsImg(){
