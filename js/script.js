@@ -21,6 +21,7 @@ init_Img()
 function init_Img(){
     ctx_model.clearRect(0, 0, canvas_model.width, canvas_model.height);
     LoadImage()
+    SetCheckedImage()
 }
 
 function LoadImage(){
@@ -53,6 +54,16 @@ function LoadImage(){
 
 }
 
+function SetCheckedImage(){
+
+    $(`.SelectedMark`).attr("aria-label","hide")
+
+    $($(`[data-category="Body"][data-index="`+SelectedOptions['Body']+`"]`).parent().children()[0]).attr("aria-label","show")
+    $($(`[data-category="Eyes"][data-index="`+SelectedOptions['Eyes']+`"]`).parent().children()[0]).attr("aria-label","show")
+    $($(`[data-category="Mouth"][data-index="`+SelectedOptions['Mouth']+`"]`).parent().children()[0]).attr("aria-label","show")
+    $($(`[data-category="Weapon"][data-index="`+SelectedOptions['Weapon']+`"]`).parent().children()[0]).attr("aria-label","show")
+}
+
 function CreateSelection_Main(){
     SelectionOptions.forEach(function(eachCatergory){
         CreateSelection_Each(eachCatergory)
@@ -74,7 +85,9 @@ function CreateSelection_Each(_options){
 
     var HTML_OptionBtn = "";
     _options.Options.forEach(function(eachOption, option_index){
-        HTML_OptionBtn += `<div class="SelectionBtn_Container"><button class="SelectionBtn" 
+        HTML_OptionBtn += `<div class="SelectionBtn_Container">
+        <div class="SelectedMark"><i class="fa-regular fa-circle-check"></i></div>
+        <button class="SelectionBtn" 
         style="background-image: url('`+eachOption.ImagePath+`');"  
         data-category="`+_options.Category+`" 
         data-index="`+option_index+`" 

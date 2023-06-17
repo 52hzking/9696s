@@ -2,7 +2,6 @@
     --btn-width: calc(100vw/4);
   }
 
-
 #Selection_Container>div {
     margin: 20px 20px;
     display: grid;
@@ -17,19 +16,28 @@
 
 #Selection_Switch button{
     border-radius: 0px;
-    height: 5vh;
-    width: 5vh;
+    height: 15vw;
+    width: 15vw;
+    max-width: 75px;
+    max-height: 75px;
     background-size: 60% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
+    border: 0px;
 }
 
 #Selection_Switch>button.active{
-    background-color: rgb(161, 32, 32);
+    background-color: rgb(161, 32, 32) !important;
 }
+
+
 
 #Selection_Container>div>div {
     aspect-ratio: 1
+}
+
+#Selection_Container{
+    overflow-y: scroll;
 }
 
 #Selection_Container button{
@@ -42,18 +50,45 @@
     border: 2px solid rgb(128, 128, 128);
 }
 
+.SelectionBtn_Container {
+    position: relative;
+}
+
+.SelectionBtn_Container .SelectedMark{
+    display: none;
+    position: absolute;
+    font-size: 1em;
+    top: 3px;
+    left: 5px;
+}
+
+.SelectionBtn_Container  .SelectedMark[aria-label='show']{
+    display: block;
+}
+
 
 #Canvas_Container{
-    background-image: url('9696_img/BG/Background.png');
+    background-image: url('../9696_img/BG/Background.png');
+    background-size: cover;
 }
 
 #SaveImg{
     position: absolute;
-    right:8px
+    width: 40px;
+    height: 40px;
+    padding: 15px;
+    right: 10px;
+    top:10px;
+}
+#SaveImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #MainWindow{
     width:100%;
+    max-width: 500px;
     position: relative;
 }
 
