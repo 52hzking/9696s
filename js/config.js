@@ -105,6 +105,30 @@ const SelectionOptions = [
             {
                 "ImageLabel":"Weapon",
                 "ImagePath":"9696_img/Weapon/Weapon_1.png"
+            },
+            {
+                "ImageLabel":"Weapon",
+                "ImagePath":"9696_img/Weapon/Weapon_2.png"
+            },
+            {
+                "ImageLabel":"Weapon",
+                "ImagePath":"9696_img/Weapon/Weapon_3.png"
+            },
+            {
+                "ImageLabel":"Weapon",
+                "ImagePath":"9696_img/Weapon/Weapon_4.png"
+            },
+            {
+                "ImageLabel":"Weapon",
+                "ImagePath":"9696_img/Weapon/Weapon_5.png"
+            },
+            {
+                "ImageLabel":"Weapon",
+                "ImagePath":"9696_img/Weapon/Weapon_6.png"
+            },
+            {
+                "ImageLabel":"Weapon",
+                "ImagePath":"9696_img/Weapon/Weapon_7.png"
             }
         ]
     },
