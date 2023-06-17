@@ -19,6 +19,9 @@
     border-radius: 0px;
     height: 5vh;
     width: 5vh;
+    background-size: 60% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
 }
 
 #Selection_Switch>button.active{
@@ -41,7 +44,7 @@
 
 
 #Canvas_Container{
-    
+    background-image: url('9696_img/BG/Background.png');
 }
 
 #SaveImg{

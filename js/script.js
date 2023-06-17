@@ -23,25 +23,6 @@ function init_Img(){
     LoadImage()
 }
 
-function LoadImg(){
-    const Body_img = new Image();
-    const Eyes_img = new Image();
-    const Mouth_img = new Image();
-    const Weapon_img = new Image();
-
-    Body_img.src = (SelectionOptions.find(FindCategory => FindCategory.Category == "Body")).Options[SelectedOptions["Body"]].ImagePath
-    Eyes_img.src = (SelectionOptions.find(FindCategory => FindCategory.Category == "Eyes")).Options[SelectedOptions["Eyes"]].ImagePath
-    Mouth_img.src = (SelectionOptions.find(FindCategory => FindCategory.Category == "Mouth")).Options[SelectedOptions["Mouth"]].ImagePath
-    Weapon_img.src = (SelectionOptions.find(FindCategory => FindCategory.Category == "Weapon")).Options[SelectedOptions["Weapon"]].ImagePath
-
-    Body_img.onload = () => {
-        ctx_model.drawImage(Body_img, 0, 0,canvas_model.width,canvas_model.height);
-        ctx_model.drawImage(Eyes_img, 0, 0,canvas_model.width,canvas_model.height);
-        ctx_model.drawImage(Mouth_img, 0, 0,canvas_model.width,canvas_model.height);
-        ctx_model.drawImage(Weapon_img, 0, 0,canvas_model.width,canvas_model.height);
-    };
-}
-
 function LoadImage(){
 
     Body_img_Path = (SelectionOptions.find(FindCategory => FindCategory.Category == "Body")).Options[SelectedOptions["Body"]].ImagePath
@@ -82,8 +63,9 @@ function CreateSelection_Main(){
 function CreateSelection_Each(_options){
 
     var HTML_Switch = `<button id="`+_options.Category+`_Selection_Btn" data-category="`+_options.Category+`"
-     onclick="SwitchCategory(this)" class="btn btn-outline-dark">`
-    +_options.Category+`</button>`;
+     onclick="SwitchCategory(this)" class="btn btn-outline-dark"
+     style="background: no-repeat url('9696_img/Btn/`+_options.Category+`.png');"
+     ></button>`;
 
     var HTML_Selection = `<div id="`+_options.Category+`_Selection"></div>`;
 
