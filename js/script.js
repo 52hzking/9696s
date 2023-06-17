@@ -20,7 +20,7 @@ init_Img()
 
 function init_Img(){
     ctx_model.clearRect(0, 0, canvas_model.width, canvas_model.height);
-    LoadImg()
+    LoadImage()
 }
 
 function LoadImg(){
@@ -40,6 +40,36 @@ function LoadImg(){
         ctx_model.drawImage(Mouth_img, 0, 0,canvas_model.width,canvas_model.height);
         ctx_model.drawImage(Weapon_img, 0, 0,canvas_model.width,canvas_model.height);
     };
+}
+
+function LoadImage(){
+
+    Body_img_Path = (SelectionOptions.find(FindCategory => FindCategory.Category == "Body")).Options[SelectedOptions["Body"]].ImagePath
+    Eyes_img_Path = (SelectionOptions.find(FindCategory => FindCategory.Category == "Eyes")).Options[SelectedOptions["Eyes"]].ImagePath
+    Mouth_img_Path = (SelectionOptions.find(FindCategory => FindCategory.Category == "Mouth")).Options[SelectedOptions["Mouth"]].ImagePath
+    Weapon_img_Path = (SelectionOptions.find(FindCategory => FindCategory.Category == "Weapon")).Options[SelectedOptions["Weapon"]].ImagePath
+
+    var imageURL = [Body_img_Path,Eyes_img_Path,Mouth_img_Path,Weapon_img_Path];
+    var imageObject = [];
+
+    var imagesLoaded = 0;
+
+    for(i=0;i<imageURL.length;i++){
+        var img = new Image();
+        img.onload = function(){
+            imagesLoaded++;
+            if (imagesLoaded== imageURL.length){
+                ctx_model.drawImage(imageObject[0], 0, 0,canvas_model.width,canvas_model.height);
+                ctx_model.drawImage(imageObject[1], 0, 0,canvas_model.width,canvas_model.height);
+                ctx_model.drawImage(imageObject[2], 0, 0,canvas_model.width,canvas_model.height);
+                ctx_model.drawImage(imageObject[3], 0, 0,canvas_model.width,canvas_model.height);
+            }
+        }
+        img.src = imageURL[i];
+        imageObject.push(img)
+
+    }
+
 }
 
 function CreateSelection_Main(){
