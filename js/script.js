@@ -17,6 +17,7 @@ var SelectedOptions_FilePath = {
 
 CreateSelection_Main()
 init_Img()
+resizeWindowElement()
 
 function init_Img(){
     ctx_model.clearRect(0, 0, canvas_model.width, canvas_model.height);
@@ -123,3 +124,15 @@ function SaveAsImg(){
     downloadLink.setAttribute('href', url);
     downloadLink.click();
 }
+
+function resizeWindowElement(){
+
+    var TempHeight = $(window).height() - ($("#Canvas_Container")[0].clientHeight + $("#Selection_Switch")[0].clientHeight);
+
+    $("#Selection_Container").css("height",TempHeight.toString() + "px")
+
+}
+
+$(window).resize(function(){
+    resizeWindowElement()
+});
