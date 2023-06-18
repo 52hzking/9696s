@@ -56,7 +56,7 @@
 .SelectionBtn_Container .SelectedMark{
     display: none;
     position: absolute;
-    font-size: 1em;
+    font-size: 5vw;
     top: 3px;
     left: 5px;
 }
@@ -121,5 +121,9 @@
         height: 10vh;
         width: 10vh;
     }
+    .SelectionBtn_Container .SelectedMark{
+        font-size: 2vh;
+    }
+    
     
 }
