@@ -103,7 +103,8 @@
 
 #backgroundWindow{
     width: 100%;
-    background-color: rgb(0, 0, 0);
+    background-image: url('../9696_img/BG/Background2.png');
+    background-size: cover;
 }
 
 

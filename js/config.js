@@ -37,6 +37,14 @@ const SelectionOptions = [
             {
                 "ImageLabel":"Eyes6",
                 "ImagePath":"9696_img/Eyes/Eyes_6.png"
+            },
+            {
+                "ImageLabel":"Eyes7",
+                "ImagePath":"9696_img/Eyes/Eyes_7.png"
+            },
+            {
+                "ImageLabel":"Eyes8",
+                "ImagePath":"9696_img/Eyes/Eyes_8.png"
             }
         ]
     },
@@ -95,6 +103,10 @@ const SelectionOptions = [
             {
                 "ImageLabel":"Mouth13",
                 "ImagePath":"9696_img/Mouth/Mouth_13.png"
+            },
+            {
+                "ImageLabel":"Mouth14",
+                "ImagePath":"9696_img/Mouth/Mouth_14.png"
             }
         ]
     },
@@ -129,6 +141,14 @@ const SelectionOptions = [
             {
                 "ImageLabel":"Weapon",
                 "ImagePath":"9696_img/Weapon/Weapon_7.png"
+            },
+            {
+                "ImageLabel":"Weapon",
+                "ImagePath":"9696_img/Weapon/Weapon_8.png"
+            },
+            {
+                "ImageLabel":"Weapon",
+                "ImagePath":"9696_img/Weapon/Weapon_9.png"
             }
         ]
     },
